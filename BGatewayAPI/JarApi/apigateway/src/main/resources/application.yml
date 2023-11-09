@@ -1,0 +1,27 @@
+server:
+  port: 9000
+  
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: service1-web
+          uri: http://localhost:8202
+          predicates:
+            - Path=/api/**
+        
+        - id: service2-post
+          uri: http://localhost:8203
+          predicates:
+            - Path=/hi/**
+                          
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+              allowedOrigins: "*"
+              allowedMethods: "*"
+              allowedHeaders: "*"

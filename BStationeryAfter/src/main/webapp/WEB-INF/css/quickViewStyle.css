@@ -1,0 +1,124 @@
+img {
+    vertical-align: middle;
+  }
+  
+/* Position the image container (needed to position the left and right arrows) */
+.container{
+    position: relative;
+}
+    
+    /* Hide the images by default */
+.mySlides {
+    display: none;
+}
+    
+    /* Add a pointer when hovering over the thumbnail images */
+.cursor {
+    cursor: pointer;
+}
+    
+    /* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: 45px;
+    height: 45px;
+    padding: 16px;
+    margin-top: -50px;
+    background-color: #f1f1f1;
+    color: #333;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 50%;
+    user-select: none;
+    -webkit-user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+    
+    /* Position the "next button" to the right */
+.next {
+    right: 0;
+}
+    
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    box-shadow: 1px 2px 10px -1px rgba(0, 0, 0, 0.3);
+    background: #fff;
+}
+
+.row-image:after {
+content: "";
+display: table;
+clear: both;
+}
+
+.row-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Six columns side by side */
+.column {
+    width: 100%;
+}
+    
+/* Add a transparency effect for thumnbail images */
+.product-image {
+    opacity: 0.7;
+    vertical-align: middle;
+}
+
+.active,
+.product-image:hover {
+    opacity: 1;
+}       
+
+.quantity-box {
+    display: flex;
+    align-items: center;
+    }
+    
+.quantity-label {
+    margin-right: 10px;
+}
+
+.quantity-button {
+    padding: 5px 10px;
+    font-size: 14px;
+    background-color: #f2f2f2;
+    border: none;
+    cursor: pointer;
+}
+
+.quantity-input {
+    width: 60px;
+    height: 33px;
+    text-align: center; 
+}
+    
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+  
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+.title-product {
+	text-decoration: none;
+	cursor: pointer;
+	color: #212529;
+}
+
+.title-product:hover {
+	color: #0dcaf0;
+}

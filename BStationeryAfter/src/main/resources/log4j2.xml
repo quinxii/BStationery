@@ -1,0 +1,59 @@
+<Configuration status="INFO" name="RollingFileLogConfigDemo">
+  
+  <!-- Log files location -->
+  <Properties>
+    <Property name="basePath">${sys:catalina.home}/logs</Property>
+  </Properties>
+  
+  <!-- RollingFileAppender configuration -->
+  <Appenders>
+    <RollingFile name="userManagementAppender" fileName="${basePath}/user_management.log"
+                 filePattern="${basePath}/user_management_%d{yyyyMMdd}.log.gz">
+      <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %level [%t] [%l] - %msg%n" />
+      <Policies>
+        <SizeBasedTriggeringPolicy size="10MB" />
+        <TimeBasedTriggeringPolicy interval="1" modulate="true" />
+      </Policies>
+      <DefaultRolloverStrategy>
+        <Delete basePath="${basePath}" maxDepth="10">
+          <IfLastModified age="30d" />
+        </Delete>
+      </DefaultRolloverStrategy>
+    </RollingFile>
+
+  </Appenders>
+  
+  <!-- Configure loggers -->
+  <Loggers>
+
+    <Root level="info">
+      <AppenderRef ref="userManagementAppender" />
+    </Root>
+    
+    <Logger name="org.btm.bstationeryafter.controller.LoginServlet" level="info" additivity="false">
+      <AppenderRef ref="userManagementAppender" />
+    </Logger>
+    
+    <Logger name="org.btm.bstationeryafter.controller.LogoutServlet" level="info" additivity="false">
+      <AppenderRef ref="userManagementAppender" />
+    </Logger>
+    
+    <Logger name="org.btm.bstationeryafter.controller.HomeServlet" level="info" additivity="false">
+      <AppenderRef ref="userManagementAppender" />
+    </Logger>
+    
+    <Logger name="org.btm.bstationeryafter.controller.SignUpServlet" level="info" additivity="false">
+      <AppenderRef ref="userManagementAppender" />
+    </Logger>
+    
+    <Logger name="org.btm.bstationeryafter.controller.UserInfoServlet" level="info" additivity="false">
+      <AppenderRef ref="userManagementAppender" />
+    </Logger>
+    
+    <Logger name="org.btm.bstationeryafter.controller.ChangePasswordServlet" level="info" additivity="false">
+      <AppenderRef ref="userManagementAppender" />
+    </Logger>
+    
+  </Loggers>
+  
+</Configuration>

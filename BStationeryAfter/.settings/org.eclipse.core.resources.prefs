@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+encoding//src/main/java/org/btm/bstationeryafter/controller/LoginServlet.java=UTF-8
+encoding//src/main/java/org/btm/bstationeryafter/controller/RemoveFromCartServlet.java=UTF-8
+encoding//src/main/java/org/btm/bstationeryafter/service/UserServiceImpl.java=UTF-8
+encoding//src/main/webapp/WEB-INF/view/menu/_menu_sortby_mobile.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/view/modal/_quick_view_modal.jsp=UTF-8
